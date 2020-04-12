@@ -3,7 +3,7 @@ const bodyparser = require('body-parser');
 const fetch = require("node-fetch");
 const app = express()
 const PORT = 3000
-var flash = require('connect-flash');
+
 
 const URL = "https://covid19.mathdro.id/api";
 const countriesURL = "https://covid19.mathdro.id/api/countries/";
@@ -54,18 +54,18 @@ app.post("/", (req, res) => {
 
                     res.render("home.ejs", {
                         countryInfo: datas,
-                        countryName:query.toUpperCase()
+                        countryName: query.toUpperCase()
                     })
                     // res.render("home.ejs", { data: data })
                 } else {
-                    res.send("This city is not in our database")
+                    res.redirect("back")
                 }
             })
             .catch(err => console.log(err))
     } else {
         console.log("send send correct info");
 
-        res.send("Send COrrect INfo")
+        res.redirect("back")
     }
 
 })

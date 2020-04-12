@@ -3,23 +3,23 @@
 
 <div class="row container" style="margin-top: 10px;">
   <form action="/" method="POSt" class="col s12">
-     <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="text" name="search"class="validate">
-          <label for="email">Search Country Here ...</label>
-        </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="email" type="text" name="search" class="validate">
+        <label for="email">Search Country Name Here ...</label>
       </div>
-      <button class="waves-effect #4a148c purple darken-4 btn btn">Search</button>
     </div>
-  </form>
+    <button class="waves-effect #4a148c purple darken-4 btn btn">Search</button>
+</div>
+</form>
 
 <div>
   <%if(typeof countryInfo === "undefined"){%>
   <p> </p>
   <%}else{%>
-   
+
   <div class="container">
-   <h3><%=countryName%></h3>
+    <h3><%=countryName%></h3>
     <div class="row" style="text-align: center;">
       <div class="col s12 m4">
         <div class="card blue">
@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-   
+
     <canvas id="doughnut-chart" width="400" height="200"></canvas>
   </div>
   <%}%>
@@ -59,3 +59,6 @@
 
 </div>
   <script src="/country.js" type="text/javascript"></script>
+
+
+  <%-include("partials/footer")%>
