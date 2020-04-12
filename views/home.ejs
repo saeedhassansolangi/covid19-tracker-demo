@@ -1,34 +1,36 @@
 <%-include("partials/headers.ejs")%>
+<div class="container">
+<div class="jumbotron">
 
-  <div class="row">
-    <div class="col s12 m4">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Confirmed</span>
-          <p id="confirmed"><%=data.confirmed.value%></p>
-        </div>
-      </div>
-    </div>
+  <li><a href="/">Home</a></li>
+  <li><a href="total">See WorldWIde</a></li>
 
-     <div class="col s12 m4">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Recoverd</span>
-          <p id="recovered"><%=data.recovered.value%></p>
+</div>
+<div class="row">
+    <form action="/" method="POSt" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="textarea1" name="search"  />
+          
         </div>
+        <button class="waves-effect waves-light btn">Search</button>
       </div>
-    </div>
-
-     <div class="col s12 m4">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Deaths</span>
-          <p id="deaths"><%=data.deaths.value%></p>
-        </div>
-      </div>
-    </div>
+    </form>
   </div>
-<canvas id="doughnut-chart" width="200" height="50"></canvas>   
- <script src="/index.js" type="text/javascript"></script>
+<div>
+<%if(typeof countryInfo === "undefined"){%>
+  <p>HI THERE</p>
+  <%}else{%>
+    <div>
+      <p>Confirmed - <%=countryInfo.confirmed.value%></p>
+      <p>Deaths - <%=countryInfo.deaths.value%></p>
+      <p>Recovered - <%=countryInfo.recovered.value%></p>
+    </div>
+    <%}%>
+</div>
 
-   
+</div>
+</div>
+ <!-- <script src="/index.js" type="text/javascript"></script>
+
+    -->

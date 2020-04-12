@@ -1,0 +1,37 @@
+<%-include("partials/headers.ejs")%>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m4">
+      <div class="card blue">
+        <div class="card-content white-text">
+          <span class="card-title">Confirmed</span>
+          <p id="confirmed"><%=data.confirmed.value%></p>
+        </div>
+      </div>
+    </div>
+
+     <div class="col s12 m4">
+      <div class="card green darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Recoverd</span>
+          <p id="recovered"><%=data.recovered.value%></p>
+        </div>
+      </div>
+    </div>
+
+     <div class="col s12 m4">
+      <div class="card red darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Deaths</span>
+          <p id="deaths"><%=data.deaths.value%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<canvas id="doughnut-chart" width="400" height="200"></canvas>  
+
+
+ <script src="/index.js" type="text/javascript"></script>
+
+   
