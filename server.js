@@ -40,7 +40,7 @@ app.get("/total", (req, res) => {
 
 app.post("/", (req, res) => {
     let query = req.body.search;
-    console.log(query);
+    // console.log(typeof query);
 
     const URL = countriesURL + query
     // console.log(URL);
@@ -52,7 +52,8 @@ app.post("/", (req, res) => {
                     console.log(typeof datas.error !== "object");
 
                     res.render("home.ejs", {
-                        countryInfo: datas
+                        countryInfo: datas,
+                        countryName:query.toUpperCase()
                     })
                     // res.render("home.ejs", { data: data })
                 } else {

@@ -1,36 +1,66 @@
 <%-include("partials/headers.ejs")%>
 <div class="container">
-<div class="jumbotron">
 
   <li><a href="/">Home</a></li>
   <li><a href="total">See WorldWIde</a></li>
 
 </div>
-<div class="row">
-    <form action="/" method="POSt" class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="textarea1" name="search"  />
-          
-        </div>
-        <button class="waves-effect waves-light btn">Search</button>
+<div class="row container">
+  <form action="/" method="POSt" class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="textarea1" name="search" />
+
       </div>
-    </form>
-  </div>
+      <button class="waves-effect #4a148c purple darken-4 btn btn">Search</button>
+    </div>
+  </form>
+</div>
 <div>
-<%if(typeof countryInfo === "undefined"){%>
+  <%if(typeof countryInfo === "undefined"){%>
   <p>HI THERE</p>
   <%}else{%>
-    <div>
-      <p>Confirmed - <%=countryInfo.confirmed.value%></p>
-      <p>Deaths - <%=countryInfo.deaths.value%></p>
-      <p>Recovered - <%=countryInfo.recovered.value%></p>
+   
+  <div class="container">
+   <h3>   <%=countryName%></h3>
+    <div class="row" style="text-align: center;">
+      <div class="col s12 m4">
+        <div class="card blue">
+          <div class="card-content white-text">
+            <span class="card-title">Confirmed</span>
+            <p id="confirmeds"><%=countryInfo.confirmed.value%></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card green darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Recoverd</span>
+            <p id="recovereds"><%=countryInfo.recovered.value%></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card red darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Deaths</span>
+            <p id="deathss"><%=countryInfo.deaths.value%></p>
+          </div>
+        </div>
+      </div>
     </div>
-    <%}%>
+   
+    <canvas id="doughnut-chart" width="400" height="200"></canvas>
+  </div>
+  <%}%>
+</div>
 </div>
 
+
+
 </div>
-</div>
- <!-- <script src="/index.js" type="text/javascript"></script>
+  <script src="/country.js" type="text/javascript"></script>
 
     -->
