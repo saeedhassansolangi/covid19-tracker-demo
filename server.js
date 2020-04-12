@@ -3,6 +3,7 @@ const bodyparser = require('body-parser');
 const fetch = require("node-fetch");
 const app = express()
 const PORT = 3000
+var flash = require('connect-flash');
 
 const URL = "https://covid19.mathdro.id/api";
 const countriesURL = "https://covid19.mathdro.id/api/countries/";

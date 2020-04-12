@@ -8,11 +8,36 @@
 
    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
    <link rel="stylesheet" href="/style.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
+<script>
+   $(document).ready(function () {
+      $('.sidenav').sidenav();
+   })
+</script>
+
+
 
 <body>
+
+   <nav class="sidenav-trigger" style="padding: 0 20px;">
+      <div class="nav-wrapper">
+         <a href="#!" class="brand-logo">Covid19-Tracker</a>
+         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+         <ul class="right hide-on-med-and-down">
+            <li><a href="/">Home</a></li>
+            <li><a href="/total">See Worldwide Result</a></li>
+         </ul>
+      </div>
+   </nav>
+
+   <ul class="sidenav" id="mobile-demo">
+      <li><a href="/">Home</a></li>
+      <li><a href="/total">See Worldwide Result</a></li>
+   </ul>
 
 
 </body>
