@@ -7,11 +7,6 @@ const PORT = process.env.PORT ||3000
 
 const URL = "https://covid19.mathdro.id/api";
 const countriesURL = "https://covid19.mathdro.id/api/countries/";
-// fetch(URL)
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//     .catch(err => console.log(err))
-
 
 app.use(express.static("public"))
 app.use(bodyparser.urlencoded({
@@ -50,21 +45,17 @@ app.post("/", (req, res) => {
             .then(response => response.json())
             .then(datas => {
                 if (typeof datas.error !== "object") {
-                    console.log(typeof datas.error !== "object");
-
+                    // console.log(typeof datas.error !== "object");
                     res.render("home.ejs", {
                         countryInfo: datas,
                         countryName: query.toUpperCase()
                     })
-                    // res.render("home.ejs", { data: data })
                 } else {
                     res.redirect("back")
                 }
             })
             .catch(err => console.log(err))
     } else {
-        console.log("send send correct info");
-
         res.redirect("back")
     }
 
