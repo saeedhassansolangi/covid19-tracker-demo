@@ -4,7 +4,6 @@ const fetch = require("node-fetch");
 const app = express()
 const PORT = process.env.PORT ||3000
 
-
 const URL = "https://covid19.mathdro.id/api";
 const countriesURL = "https://covid19.mathdro.id/api/countries/";
 
@@ -16,7 +15,6 @@ app.use(bodyparser.urlencoded({
 app.get("/", (req, res) => {
     res.render("home.ejs")
 })
-
 
 app.get("/total", (req, res) => {
     fetch(URL)
@@ -31,13 +29,9 @@ app.get("/total", (req, res) => {
 
 })
 
-
-
-
 app.post("/", (req, res) => {
     let query = req.body.search;
     // console.log(typeof query);
-
     const URL = countriesURL + query
     // console.log(URL);
     if (query !== "") {
