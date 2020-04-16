@@ -1,10 +1,13 @@
 var confirmed = document.getElementById("confirmeds").innerHTML;
 var recovered = document.getElementById("recovereds").innerHTML
 var deaths = document.getElementById("deathss").innerHTML;
+var countryname = document.getElementById("name").innerHTML;
+console.log("countryname is ",countryname);
 
 console.log(`confirmed : ${confirmed}`);
 console.log(`recovered : ${recovered}`);
 console.log(`deaths : ${deaths}`);
+
 
 
 
@@ -21,7 +24,7 @@ new Chart(document.getElementById("doughnut-chart"), {
   options: {
     title: {
       display: true,
-      text: 'Pakistan Covid19 Cases'
+      text: `${countryname} Covid19 Cases`
     }
   }
 });
